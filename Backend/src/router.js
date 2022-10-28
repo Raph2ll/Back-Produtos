@@ -6,5 +6,6 @@ route.post('/products', require('./controller/create'));
 route.get('/products', require('./controller/list'));
 route.get('/products/:id', require('./controller/findById'));
 route.put('/products/:id', require('./controller/update'));
+route.delete('/products/:id', require('./controller/remove'));
 
 module.exports = route;
