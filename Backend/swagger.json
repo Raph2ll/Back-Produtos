@@ -1,0 +1,302 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Products",
+    "description": "Documentation from products api",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/products": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [],
+        "requestBody": {
+          "description": "Create a product",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "bicicleta"
+                  },
+                  "price": {
+                    "type": "string",
+                    "example": "7,50"
+                  },
+                  "stock": {
+                    "type": "string",
+                    "example": "200"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "verdes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "bicicleta"
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "7,50"
+                    },
+                    "stock": {
+                      "type": "string",
+                      "example": "200"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "verdes"
+                    },
+                    "date": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid entries. Try again."
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "Return all products",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "bicicleta"
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "7,50"
+                    },
+                    "stock": {
+                      "type": "string",
+                      "example": "200"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "verdes"
+                    },
+                    "date": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "ProductID"
+        ],
+        "description": "Get a product by id",
+        "parameters": [
+          {
+            "schema": {},
+            "name": "id",
+            "in": "path",
+            "description": "Product ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "bicicleta"
+                    },
+                    "price": {
+                      "type": "string",
+                      "example": "7,50"
+                    },
+                    "stock": {
+                      "type": "string",
+                      "example": "200"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "verdes"
+                    },
+                    "date": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProductID"
+        ],
+        "description": "Edit a product by id",
+        "parameters": [
+          {
+            "schema": {},
+            "name": "id",
+            "in": "path",
+            "description": "Product ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "description": "Edit a product",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "bicicleta"
+                  },
+                  "price": {
+                    "type": "string",
+                    "example": "7,50"
+                  },
+                  "stock": {
+                    "type": "string",
+                    "example": "200"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "verdes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "date": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Entries"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProductID"
+        ],
+        "description": "Delete a product by id",
+        "parameters": [
+          {
+            "schema": {},
+            "name": "id",
+            "in": "path",
+            "description": "Product ID",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}
