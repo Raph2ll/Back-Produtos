@@ -23,25 +23,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "example": "bicicleta"
-                  },
-                  "price": {
-                    "type": "string",
-                    "example": "7,50"
-                  },
-                  "stock": {
-                    "type": "string",
-                    "example": "200"
-                  },
-                  "description": {
-                    "type": "string",
-                    "example": "verdes"
-                  }
-                }
+                "$ref": "#/components/schemas/Product"
               }
             }
           }
@@ -219,25 +201,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "example": "bicicleta"
-                  },
-                  "price": {
-                    "type": "string",
-                    "example": "7,50"
-                  },
-                  "stock": {
-                    "type": "string",
-                    "example": "200"
-                  },
-                  "description": {
-                    "type": "string",
-                    "example": "verdes"
-                  }
-                }
+                "$ref": "#/components/schemas/Product"
               }
             }
           }
@@ -294,6 +258,31 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "bicicleta"
+          },
+          "price": {
+            "type": "string",
+            "example": "7,50"
+          },
+          "stock": {
+            "type": "string",
+            "example": "200"
+          },
+          "description": {
+            "type": "string",
+            "example": "verdes"
           }
         }
       }
