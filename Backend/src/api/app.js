@@ -10,3 +10,5 @@ app.use(cors());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', router);
+
+module.exports = app;
