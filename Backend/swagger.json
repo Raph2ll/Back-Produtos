@@ -87,7 +87,7 @@
             }
           },
           "400": {
-            "description": "Invalid entries. Try again."
+            "description": "Error: Bad Request"
           }
         }
       },
