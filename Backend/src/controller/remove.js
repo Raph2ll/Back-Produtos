@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
     const { id } = req.params;
 
     const result = await service(id);
-    if (result) return res.status(statusCodes.NOT_FOUND).json(result.err);
+    if (!result) return res.status(statusCodes.NOT_FOUND).json(result.err);
 
     return res.status(statusCodes.NO_CONTENT).json(result);
   } catch (err) {
