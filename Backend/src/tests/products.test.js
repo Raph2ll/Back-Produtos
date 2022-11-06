@@ -102,7 +102,6 @@ describe("Products", () =>  {
         .put(`/products/${result._id}`);
 
       expect(response.status).toBe(400);
-      console.log(response.body)
     });
 
     it("should be able to update a product", async () => {
@@ -127,7 +126,6 @@ describe("Products", () =>  {
         });
 
       expect(response.status).toBe(200);
-      console.log(response.body)
     });
   });
 });
